@@ -2,6 +2,7 @@
 A queue is a data structure whose primary purpose is to store and
 return elements in First In First Out order.
 
+
 1. Implement the Queue class using an array as the underlying storage structure.
    Make sure the Queue tests pass.
 2. Re-implement the Queue class, this time using the linked list implementation
@@ -14,6 +15,7 @@ Stretch: What if you could only use instances of your Stack class to implement t
          What would that look like? How many Stacks would you need? Try it!
 """
 
+from stack import Stack
 
 # class Queue:
 #     def __init__(self):
@@ -32,6 +34,10 @@ Stretch: What if you could only use instances of your Stack class to implement t
 #             return None
 #         else:
 #             return self.storage.pop(len(self.storage) - 1)
+
+
+# from stack.stack import Stack
+
 
 class Node:
     def __init__(self, value=None, next_node=None):
@@ -62,6 +68,7 @@ class Queue:
         self.size += 1
         new_node = Node(value)
         if not self.head:
+            print("IN HERE")
             self.head = new_node
         else:
             current = self.head
@@ -79,16 +86,30 @@ class Queue:
             return value
 
 
+print(Stack)
+b = Stack()
+
 l = Queue()
+b.push(100), "Length:", b.__len__()
+b.push(101), "Length:", b.__len__()
+b.push(102), "Length:", b.__len__()
+b.push(103), "Length:", b.__len__()
 
-print(l.enqueue(100), "Length:", l.__len__())
-print(l.enqueue(101), "Length:", l.__len__())
-print(l.enqueue(105), "Length:", l.__len__())
-print(l.enqueue(4), "Length:", l.__len__())
+
+l.enqueue(100)
+l.enqueue(101)
+l.enqueue(105)
+l.enqueue(4)
 
 
-print(l.dequeue())
-print(l.dequeue())
-print(l.dequeue())
-print(l.dequeue())
-print(l.dequeue())
+print(l.dequeue(), "Length:", l.__len__())
+print(l.dequeue(), "Length:", l.__len__())
+print(l.dequeue(), "Length:", l.__len__())
+print(l.dequeue(), "Length:", l.__len__())
+print(l.dequeue(), "Length:", l.__len__())
+
+
+print(b.pop(), "LENGTH", b.__len__())
+print(b.pop(), "LENGTH", b.__len__())
+print(b.pop(), "LENGTH", b.__len__())
+print(b.pop(), "LENGTH", b.__len__())
